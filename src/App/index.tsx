@@ -2,20 +2,18 @@ import Card from "@/comps/Card";
 import Hr from "@/comps/Hr";
 import Title from "@/comps/Title";
 import ButtonCard from "./ButtonCard";
+import IconCard from "./IconCard";
 
 function App() {
   return (
     <>
-      <Title class="text-3xl pl-6 pt-6 sticky top-0 shadow-sm border-b bg-white">
+      <Title class="text-3xl pl-6 pt-4 sticky top-0 shadow-sm border-b bg-gradient-to-r from-purple-100 via-sky-100 via-50% to-emerald-100 to-90% font-normal">
         徐鑫的组件库
       </Title>
       <Card>
         <Title>卡片组件 - Card</Title>
         <Hr></Hr>
         <Card>我是卡片</Card>
-        {/* <div>
-          <Button class="border-blue-300 text-blue-500">按钮</Button>
-        </div> */}
       </Card>
 
       <Card class="mt-6">
@@ -29,6 +27,8 @@ function App() {
       </Card>
 
       <ButtonCard />
+
+      <IconCard />
     </>
   );
 }

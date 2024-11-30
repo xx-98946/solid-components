@@ -90,7 +90,7 @@ export default function ButtonCard() {
       </For>
 
       <div class="px-2 flex items-center">
-        <span>自定义渐变按钮：</span>
+        <span>渐变按钮：</span>
         <Button class="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white">
           自定义渐变按钮
         </Button>
