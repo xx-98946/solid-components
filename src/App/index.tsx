@@ -3,6 +3,7 @@ import Hr from "@/comps/Hr";
 import Title from "@/comps/Title";
 import ButtonCard from "./ButtonCard";
 import IconCard from "./IconCard";
+import LayoutCard from "./LayoutCard";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       <ButtonCard />
 
       <IconCard />
+
+      <LayoutCard />
     </>
   );
 }
