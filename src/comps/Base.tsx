@@ -8,7 +8,7 @@ import {
 import { Dynamic } from "solid-js/web";
 import { twMerge } from "tailwind-merge";
 
-type IPropData<T> = undefined | T | Signal<T>;
+export type IPropData<T> = undefined | T | Signal<T>;
 
 /**
  * 判断 value 是不是 Signal
@@ -28,17 +28,18 @@ function isSignal<T>(value: IPropData<T>) {
  * @param defaultValue
  * @returns
  */
-function toDataProps<T>(defaultValue: IPropData<T>): Signal<T> {
+export function toDataProps<T>(defaultValue: IPropData<T>): Signal<T> {
   return (isSignal(defaultValue)
     ? defaultValue
     : createSignal(defaultValue)) as any as Signal<T>;
 }
 
-interface IBaseProps {
+export interface IBaseProps {
   class?: IPropData<string>; // 覆盖样式
   baseClass?: string; // 基本样式
   children?: JSX.Element;
   component?: string | Component;
+  [key: string]: unknown;
 }
 export default function Base(props: IBaseProps) {
   const [knownProps, restProps] = splitProps(props, [

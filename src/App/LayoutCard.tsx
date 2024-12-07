@@ -7,7 +7,7 @@ import Center from "@/comps/Center";
 export default function () {
   return (
     <Card>
-      <Title>布局组件</Title>
+      <Title>布局组件 Layout</Title>
       <Hr></Hr>
       <div>
         <Layout class="grid grid-cols-6 text-white gap-2">

@@ -6,7 +6,7 @@ import Title from "@/comps/Title";
 
 export default function () {
   return (
-    <Card class="mt-6">
+    <Card>
       <Title>图标组件 - Svg</Title>
       <Hr />
 
