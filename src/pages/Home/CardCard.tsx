@@ -4,10 +4,13 @@ import Title from "@/comps/Title";
 
 export default function CardCard() {
   return (
-    <Card>
+    <Card id="CardCard">
       <Title>卡片组件 - Card</Title>
       <Hr></Hr>
-      <Card>我是卡片</Card>
+      <Card>
+        <div>我是卡片内容1</div>
+        <div>我是卡片内容2</div>
+      </Card>
     </Card>
   );
 }

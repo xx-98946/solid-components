@@ -10,10 +10,17 @@
     "fmt": "prettier . --write"
   },
   "dependencies": {
+    "@solidjs/router": "^0.15.1",
+    "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.0.0-beta.2",
+    "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.1",
     "@xterm/xterm": "^5.5.0",
     "autoprefixer": "^10.4.20",
+    "highlight.js": "^11.11.0",
+    "lodash": "^4.17.21",
+    "marked": "^15.0.4",
+    "monaco-editor": "^0.52.2",
     "postcss": "^8.4.49",
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",

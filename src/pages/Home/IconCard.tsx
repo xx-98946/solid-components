@@ -6,8 +6,8 @@ import Title from "@/comps/Title";
 
 export default function () {
   return (
-    <Card>
-      <Title>图标组件 - Svg</Title>
+    <Card id="IconCard">
+      <Title>图标组件 - Icon</Title>
       <Hr />
 
       <div class="flex items-center gap-4">

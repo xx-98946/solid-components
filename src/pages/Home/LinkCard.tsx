@@ -5,7 +5,7 @@ import Title from "@/comps/Title";
 
 export default function LinkCard() {
   return (
-    <Card>
+    <Card id="LinkCard">
       <Title>链接组件 - Link</Title>
       <Hr />
       <div class="p-2">

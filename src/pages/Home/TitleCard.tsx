@@ -4,7 +4,7 @@ import Title from "@/comps/Title";
 
 export default function TitleCard() {
   return (
-    <Card>
+    <Card id="TitleCard">
       <Title>标题组件 - Title</Title>
       <Hr />
       <Title class="text-4xl">我是标题1</Title>

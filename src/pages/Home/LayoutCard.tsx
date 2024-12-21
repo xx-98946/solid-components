@@ -6,7 +6,7 @@ import Center from "@/comps/Center";
 
 export default function () {
   return (
-    <Card>
+    <Card id="LayoutCard">
       <Title>布局组件 Layout</Title>
       <Hr></Hr>
       <div>

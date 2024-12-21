@@ -64,7 +64,7 @@ export default function ButtonCard() {
     },
   ];
   return (
-    <Card>
+    <Card id="ButtonCard">
       <Title>按钮组件 - Button</Title>
       <Hr></Hr>
       <For each={list}>

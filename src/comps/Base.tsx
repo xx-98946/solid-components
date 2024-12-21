@@ -8,14 +8,14 @@ import {
 import { Dynamic } from "solid-js/web";
 import { twMerge } from "tailwind-merge";
 
-export type IPropData<T> = undefined | T | Signal<T>;
+export type IStateOrProp<T> = undefined | T | Signal<T>;
 
 /**
  * 判断 value 是不是 Signal
  * @param value
  * @returns
  */
-function isSignal<T>(value: IPropData<T>) {
+function isSignal<T>(value: IStateOrProp<T>) {
   if (Array.isArray(value) && value.length && typeof value[0] == "function") {
     return true;
   }
@@ -28,14 +28,14 @@ function isSignal<T>(value: IPropData<T>) {
  * @param defaultValue
  * @returns
  */
-export function toDataProps<T>(defaultValue: IPropData<T>): Signal<T> {
+export function toSignal<T>(defaultValue: IStateOrProp<T>): Signal<T> {
   return (isSignal(defaultValue)
     ? defaultValue
     : createSignal(defaultValue)) as any as Signal<T>;
 }
 
 export interface IBaseProps {
-  class?: IPropData<string>; // 覆盖样式
+  class?: IStateOrProp<string>; // 覆盖样式
   baseClass?: string; // 基本样式
   children?: JSX.Element;
   component?: string | Component;
@@ -48,7 +48,7 @@ export default function Base(props: IBaseProps) {
     "component",
   ]);
 
-  const [getClass] = toDataProps(knownProps.class);
+  const [getClass] = toSignal(knownProps.class);
   const component = knownProps.component || "div";
   const computedClass = () => twMerge(props.baseClass, getClass());
   return (

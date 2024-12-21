@@ -20,7 +20,7 @@ export default function () {
   ];
 
   return (
-    <Card>
+    <Card id="ScrollCard">
       <Title>滚动条组件 Scroll</Title>
       <Hr></Hr>
       <div>
