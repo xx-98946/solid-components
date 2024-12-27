@@ -10,6 +10,7 @@
     "npm:autoprefixer@^10.4.20": "10.4.20_postcss@8.4.49",
     "npm:highlight.js@^11.11.0": "11.11.0",
     "npm:lodash@^4.17.21": "4.17.21",
+    "npm:marked-highlight@^2.2.1": "2.2.1_marked@15.0.4",
     "npm:marked@^15.0.4": "15.0.4",
     "npm:monaco-editor@~0.52.2": "0.52.2",
     "npm:postcss@^8.4.49": "8.4.49",
@@ -966,6 +967,12 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
+    "marked-highlight@2.2.1_marked@15.0.4": {
+      "integrity": "sha512-SiCIeEiQbs9TxGwle9/OwbOejHCZsohQRaNTY2u8euEXYt2rYUFoiImUirThU3Gd/o6Q1gHGtH9qloHlbJpNIA==",
+      "dependencies": [
+        "marked"
+      ]
+    },
     "marked@15.0.4": {
       "integrity": "sha512-TCHvDqmb3ZJ4PWG7VEGVgtefA5/euFmsIhxtD0XsBxI39gUSKL81mIRFdt0AiNQozUahd4ke98ZdirExd/vSEw=="
     },
@@ -1487,6 +1494,7 @@
         "npm:autoprefixer@^10.4.20",
         "npm:highlight.js@^11.11.0",
         "npm:lodash@^4.17.21",
+        "npm:marked-highlight@^2.2.1",
         "npm:marked@^15.0.4",
         "npm:monaco-editor@~0.52.2",
         "npm:postcss@^8.4.49",

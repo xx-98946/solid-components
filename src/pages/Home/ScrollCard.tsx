@@ -23,8 +23,9 @@ export default function () {
     <Card id="ScrollCard">
       <Title>滚动条组件 Scroll</Title>
       <Hr></Hr>
-      <div>
+      <Card class="mb-0">
         <Title class="text-xl">水平滚动条</Title>
+        <Hr></Hr>
         <Scroll class="flex gap-8 p-4 pb-6 snap-x snap-mandatory">
           <For each={imgList}>
             {(item) => (
@@ -35,11 +36,11 @@ export default function () {
             )}
           </For>
         </Scroll>
-      </div>
-
+      </Card>
       <Layout class="grid-cols-3">
-        <div class="col-span-2">
+        <Card class="col-span-2">
           <Title class="text-xl">垂直滚动条</Title>
+          <Hr></Hr>
           <Scroll class="grid snap-y h-48 grid-cols-2 gap-8 p-4">
             <For each={imgList}>
               {(item) => (
@@ -50,10 +51,10 @@ export default function () {
               )}
             </For>
           </Scroll>
-        </div>
-
-        <div>
+        </Card>
+        <Card>
           <Title class="text-xl">水平居中滚动条</Title>
+          <Hr></Hr>
           <Center>
             <Scroll class="w-[24rem] flex gap-8 p-4 pb-6 snap-x snap-mandatory">
               <For each={imgList}>
@@ -66,7 +67,7 @@ export default function () {
               </For>
             </Scroll>
           </Center>
-        </div>
+        </Card>
       </Layout>
     </Card>
   );

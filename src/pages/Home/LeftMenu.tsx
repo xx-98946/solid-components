@@ -1,45 +1,21 @@
-import { For } from "solid-js";
+import Link from "@/comps/Link";
+import { split } from "lodash";
+import { For, splitProps } from "solid-js";
 import { twMerge } from "tailwind-merge";
 
-export default function LeftMenu(props: { activeId?: string | null }) {
-  const list = [
-    {
-      title: "卡片组件",
-      id: "CardCard",
-    },
-    {
-      title: "标题组件",
-      id: "TitleCard",
-    },
-    {
-      title: "按钮组件",
-      id: "ButtonCard",
-    },
-    {
-      title: "图标组件",
-      id: "IconCard",
-    },
-    {
-      title: "布局组件",
-      id: "LayoutCard",
-    },
-    {
-      title: "滚动条组件",
-      id: "ScrollCard",
-    },
-    {
-      title: "链接组件",
-      id: "LinkCard",
-    },
-    {
-      title: "分隔面板组件",
-      id: "SplitterCard",
-    },
-  ];
+interface IProps {
+  activeId?: string | null;
+  list: Array<{
+    title: string;
+    id: string;
+  }>;
+}
+export default function LeftMenu(props: IProps) {
+  const [knownProps, rest] = splitProps(props, ["list"]);
   return (
-    <div>
+    <div class="bg-gray-100">
       <ul class="pl-4">
-        <For each={list}>
+        <For each={knownProps.list}>
           {(item) => (
             <li
               class={twMerge(
@@ -47,7 +23,7 @@ export default function LeftMenu(props: { activeId?: string | null }) {
                 props.activeId == item.id && "bg-purple-100 border-purple-500",
               )}
             >
-              <a href={`#${item.id}`}>{item.title}</a>
+              <Link href={`#${item.id}`}>{item.title}</Link>
             </li>
           )}
         </For>

@@ -1,5 +1,5 @@
 import Base, { IStateOrProp, toSignal } from "./Base";
-import { createSignal, JSX } from "solid-js";
+import { JSX, onMount } from "solid-js";
 import { throttle } from "lodash";
 
 interface IProps extends JSX.HTMLAttributes<HTMLDivElement> {
@@ -33,13 +33,33 @@ export default function Scroll(props: IProps) {
       }
       return false;
     });
+    // 将id同步到地址栏中
+    if (topItem && topItem.id) {
+      history.replaceState({}, "", `${location.pathname}#${topItem!.id}`);
+    }
     setCurElement(topItem!);
   };
+
+  let refParent: HTMLElement | null = null;
+  onMount(() => {
+    if (refParent) {
+      let item: Element | null = null;
+      if (location.hash) {
+        item = document.querySelector(location.hash);
+      }
+      if (!item) {
+        item = refParent.children[0];
+      }
+      item!.scrollIntoView();
+      setCurElement(item);
+    }
+  });
   return (
     <Base
       {...rest}
       baseClass={baseClass}
       onScroll={throttle(handleScroll, 50)}
+      ref={(el: HTMLElement | null) => (refParent = el)}
     ></Base>
   );
 }

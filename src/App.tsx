@@ -7,6 +7,7 @@ export default function App() {
     <div class="font-mono">
       <Router>
         <Route path="/" component={Home} />
+        <Route path="/home" component={Home} />
         <Route path="/test" component={Test} />
       </Router>
     </div>

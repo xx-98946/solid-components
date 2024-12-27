@@ -16,7 +16,7 @@ export default function Splitter(props: ISplitterProps) {
 interface SplitterSideProps extends IBaseProps {
   width?: IStateOrProp<number>;
   height?: IStateOrProp<number>;
-  lineClass?: string;
+  splitterClass?: string;
 }
 /**
  * 左侧布局
@@ -24,7 +24,7 @@ interface SplitterSideProps extends IBaseProps {
  * @returns
  */
 export function SplitterLeft(props: SplitterSideProps) {
-  const { children, lineClass, ...rest } = props;
+  const { children, splitterClass, ...rest } = props;
   const width = toSignal(props.width || 400);
   const [getWidth] = width;
 
@@ -36,7 +36,7 @@ export function SplitterLeft(props: SplitterSideProps) {
     >
       <div class="flex-1 h-full">{children}</div>
       {/* 这个是拖拽条 */}
-      <VerticalSplitter width={width} class={lineClass} />
+      <VerticalSplitter width={width} class={splitterClass} />
     </Base>
   );
 }
@@ -47,7 +47,7 @@ export function SplitterLeft(props: SplitterSideProps) {
  * @returns
  */
 export function SplitterRight(props: SplitterSideProps) {
-  const { children, lineClass, ...rest } = props;
+  const { children, splitterClass, ...rest } = props;
   const width = toSignal(props.width || 400);
   const [getWidth] = width;
   return (
@@ -57,7 +57,7 @@ export function SplitterRight(props: SplitterSideProps) {
       style={`width: ${getWidth()}px;`}
     >
       {/* 这个是拖拽条 */}
-      <VerticalSplitter width={width} class={lineClass} reverse />
+      <VerticalSplitter width={width} class={splitterClass} reverse />
       <div class="flex-1 h-full">{children}</div>
     </Base>
   );
@@ -125,7 +125,7 @@ function VerticalSplitter(props: IVerticalSplitterProps) {
     <>
       <VBody mouseup={handleMouseup} mousemove={handleMousemove} />
       <Base
-        baseClass="h-full bg-transparent w-1 hover:bg-gray-500  cursor-col-resize rounded-md"
+        baseClass="h-full bg-transparent w-1 hover:bg-blue-500  cursor-col-resize rounded-md transition"
         class={props.class}
         onMouseDown={handleMouseDown}
       ></Base>
@@ -200,7 +200,7 @@ function HorizontalSplitter(props: IhorizontalSplitterProps) {
  * @returns
  */
 export function SplitterBottom(props: SplitterSideProps) {
-  const { children, lineClass, ...rest } = props;
+  const { children, splitterClass, ...rest } = props;
   const height = toSignal(props.height || 100);
   const [getHeight] = height;
 
@@ -210,7 +210,7 @@ export function SplitterBottom(props: SplitterSideProps) {
       baseClass="flex-grow-0 flex-shrink-0 flex flex-col items-stretch justify-end"
       style={`height: ${getHeight()}px;`}
     >
-      <HorizontalSplitter height={height} class={lineClass} reverse />
+      <HorizontalSplitter height={height} class={splitterClass} reverse />
       <div class="flex-1 w-full">{children}</div>
       {/* 这个是拖拽条 */}
     </Base>
@@ -223,7 +223,7 @@ export function SplitterBottom(props: SplitterSideProps) {
  * @returns
  */
 export function SplitterTop(props: SplitterSideProps) {
-  const { children, lineClass, ...rest } = props;
+  const { children, splitterClass, ...rest } = props;
   const height = toSignal(props.height || 100);
   const [getHeight] = height;
 
@@ -234,7 +234,7 @@ export function SplitterTop(props: SplitterSideProps) {
       style={`height: ${getHeight()}px;`}
     >
       <div class="flex-1 w-full">{children}</div>
-      <HorizontalSplitter height={height} class={lineClass} />
+      <HorizontalSplitter height={height} class={splitterClass} />
       {/* 这个是拖拽条 */}
     </Base>
   );
