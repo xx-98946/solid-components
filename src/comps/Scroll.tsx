@@ -6,7 +6,8 @@ interface IProps extends JSX.HTMLAttributes<HTMLDivElement> {
   curElement?: IStateOrProp<Element | null>;
 }
 
-const baseClass = "scroll-smooth overflow-auto focus:scroll-auto";
+const baseClass =
+  "scroll-smooth overflow-auto focus:scroll-auto dark:scheme-dark";
 
 export default function Scroll(props: IProps) {
   const { curElement, ...rest } = props;

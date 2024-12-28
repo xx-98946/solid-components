@@ -40,8 +40,8 @@ export default function () {
       <Card>
         <Title class="text-xl">垂直滚动条</Title>
         <Hr></Hr>
-        <Scroll class="grid snap-y h-64 grid-cols-3 gap-8 p-4">
-          <For each={imgList.reverse()}>
+        <Scroll class="grid snap-y h-64 grid-cols-5 gap-8 p-4">
+          <For each={imgList}>
             {(item) => (
               <img
                 class="rounded-lg shadow-xl bg-white object-cover h-60 snap-start w-full"

@@ -125,7 +125,7 @@ function VerticalSplitter(props: IVerticalSplitterProps) {
     <>
       <VBody mouseup={handleMouseup} mousemove={handleMousemove} />
       <Base
-        baseClass="h-full bg-transparent w-1 hover:bg-blue-500  cursor-col-resize rounded-md transition"
+        baseClass="h-full bg-slate-50 dark:bg-gray-800 w-[2px] hover:bg-blue-500 dark:hover:bg-blue-500 cursor-col-resize rounded-md transition"
         class={props.class}
         onMouseDown={handleMouseDown}
       ></Base>
@@ -186,7 +186,7 @@ function HorizontalSplitter(props: IhorizontalSplitterProps) {
     <>
       <VBody mouseup={handleMouseup} mousemove={handleMousemove} />
       <Base
-        baseClass="h-1 w-full bg-transparent  hover:bg-gray-500 cursor-row-resize"
+        baseClass="h-[2px] w-full bg-slate-50 dark:bg-gray-800  hover:bg-gray-500 dark:hover:bg-blue-500 cursor-row-resize"
         class={props.class}
         onMouseDown={handleMouseDown}
       ></Base>

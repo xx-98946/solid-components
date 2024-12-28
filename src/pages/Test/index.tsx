@@ -4,13 +4,18 @@ import Markdown from "@/comps/Markdown";
 // import Code from "@/comps/Code";
 import Card from "@/comps/Card";
 import { Button, ButtonStyles } from "@/comps/Button";
-import { toast } from "@/utils";
+import getTargetPosition from "@/utils/getTargetRect";
+
+function handleClick(e) {
+  const result = getTargetPosition(e.target);
+  console.log(result);
+}
 
 export default function Test() {
   return (
     <>
       <CommonHeader />
-      <Button class={ButtonStyles.bluePlain} onClick={() => toast("123123")}>
+      <Button class={ButtonStyles.bluePlain} onClick={handleClick}>
         提示
       </Button>
       <Card class="mt-4">

@@ -6,6 +6,7 @@ import "highlight.js/styles/tokyo-night-dark.css";
 import { createSignal, onMount, splitProps } from "solid-js";
 import { nanoid } from "nanoid";
 import { toast } from "@/utils";
+import getTargetPosition from "@/utils/getTargetRect";
 
 interface IMarkdownProps {
   raw: string;
@@ -39,12 +40,9 @@ export default function Markdown(props: IMarkdownProps) {
         await navigator.clipboard.writeText(
           JSON.parse(target.dataset.copyText!),
         );
-        const left = e.clientX;
-        const top = e.clientY;
-
+        const { xCenter, bottom } = getTargetPosition(target);
         toast({
-          left,
-          top,
+          position: [xCenter, bottom],
           message: "拷贝成功",
         });
       };
@@ -54,10 +52,11 @@ export default function Markdown(props: IMarkdownProps) {
   return (
     <>
       <div
-        class={twMerge("prose max-w-full", knownProps.class)}
+        class={twMerge("prose max-w-full dark:prose-invert", knownProps.class)}
         innerHTML={markdownValue}
         {...restProps}
       ></div>
+      {/* <div>{markdownValue}</div> */}
     </>
   );
 }

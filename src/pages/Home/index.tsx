@@ -64,13 +64,13 @@ function App() {
   ];
 
   return (
-    <main class="flex flex-col h-screen w-screen overflow-hidden">
+    <main class="flex flex-col h-screen w-screen overflow-hidden dark:bg-slate-900">
       <CommonHeader class="grow-0 shrink-0" />
       <Splitter class="flex flex-1">
         <Splitter.left
           width={leftWidth}
-          splitterClass="bg-gray-50"
-          class="bg-gray-50 pt-4"
+          splitterClass="bg-gray-50 dark:bg-gray-800"
+          class="bg-gray-50 dark:bg-slate-950"
         >
           <LeftMenu list={menuList} activeId={getScrollTopElement()?.id} />
         </Splitter.left>

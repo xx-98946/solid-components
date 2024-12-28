@@ -37,22 +37,29 @@ export function createLimitedSignal(
 
 interface IToastOptions {
   message: string;
-  left: number;
-  top: number;
+  position: [number, number];
 }
 /**
- * 提示
+ * 提示弹窗
  * @param message
  */
-export function toast({ message, top, left }: IToastOptions) {
+export function toast({ message, position }: IToastOptions) {
   const messageNode = document.createElement("div");
   messageNode.innerHTML = message;
   messageNode.className = `fixed bg-amber-300 p-2  rounded-md -translate-x-1/2 text-sm`;
-  messageNode.setAttribute("style", `left:${left}px;top:${top + 30}px;`);
-  console.log({ left, top, message });
+  const [x, y] = position;
+  messageNode.setAttribute("style", `left:${x}px;top:${y + 10}px;`);
+  console.log({ x, y, message });
   const body = document.body;
   body.append(messageNode);
   setTimeout(() => {
     body.removeChild(messageNode);
   }, 500);
+}
+
+export function getTargetRect(target: HTMLElement) {
+  const rects = target.getClientRects();
+  for (let rect of rects) {
+    console.log("??rect", rect);
+  }
 }
