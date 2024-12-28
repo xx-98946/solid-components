@@ -37,38 +37,20 @@ export default function () {
           </For>
         </Scroll>
       </Card>
-      <Layout class="grid-cols-3">
-        <Card class="col-span-2">
-          <Title class="text-xl">垂直滚动条</Title>
-          <Hr></Hr>
-          <Scroll class="grid snap-y h-48 grid-cols-2 gap-8 p-4">
-            <For each={imgList}>
-              {(item) => (
-                <img
-                  class="rounded-lg shadow-xl bg-white object-cover h-40 snap-center w-full"
-                  src={item}
-                />
-              )}
-            </For>
-          </Scroll>
-        </Card>
-        <Card>
-          <Title class="text-xl">水平居中滚动条</Title>
-          <Hr></Hr>
-          <Center>
-            <Scroll class="w-[24rem] flex gap-8 p-4 pb-6 snap-x snap-mandatory">
-              <For each={imgList}>
-                {(item) => (
-                  <img
-                    class="w-80 h-40 rounded-lg shadow-xl shrink-0 snap-center object-cover first:ml-8 last:mr-8"
-                    src={item}
-                  />
-                )}
-              </For>
-            </Scroll>
-          </Center>
-        </Card>
-      </Layout>
+      <Card>
+        <Title class="text-xl">垂直滚动条</Title>
+        <Hr></Hr>
+        <Scroll class="grid snap-y h-64 grid-cols-3 gap-8 p-4">
+          <For each={imgList.reverse()}>
+            {(item) => (
+              <img
+                class="rounded-lg shadow-xl bg-white object-cover h-60 snap-start w-full"
+                src={item}
+              />
+            )}
+          </For>
+        </Scroll>
+      </Card>
     </Card>
   );
 }

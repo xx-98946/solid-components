@@ -1,9 +1,5 @@
 import { onCleanup, onMount } from "solid-js";
 
-// type IBodyEvents = {
-//   [key in keyof HTMLElementEventMap]?: unknown;
-// };
-
 type IVBodyEvents = {
   [P in keyof HTMLElementEventMap]?: Function;
 };

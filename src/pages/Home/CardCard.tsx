@@ -8,7 +8,7 @@ export default function CardCard() {
       <Title>卡片组件 - Card</Title>
       <Hr></Hr>
       <Card class="m-4">
-        <Title>标题</Title>
+        <Title>卡片标题</Title>
         <Hr></Hr>
         <div class="pl-2">
           <div>我是卡片内容1</div>

@@ -7,7 +7,7 @@ import raw from "./test.md?raw";
 export default function MarkdownCard() {
   return (
     <Card id="MarkdownCard">
-      <Title>Markdown 组件</Title>
+      <Title>博客组件 - Markdown</Title>
       <Hr></Hr>
       <Card>
         <Title>基本文档</Title>

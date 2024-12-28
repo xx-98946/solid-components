@@ -8,10 +8,10 @@ export default function CommonHeader(props: { class?: string }) {
   const links = [
     {
       content: "组件库",
-      href: "/",
+      href: "/home",
     },
     {
-      content: "test",
+      content: "Test",
       href: "/test",
     },
   ];

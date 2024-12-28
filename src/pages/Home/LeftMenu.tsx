@@ -13,7 +13,7 @@ interface IProps {
 export default function LeftMenu(props: IProps) {
   const [knownProps, rest] = splitProps(props, ["list"]);
   return (
-    <div class="bg-gray-100">
+    <div>
       <ul class="pl-4">
         <For each={knownProps.list}>
           {(item) => (

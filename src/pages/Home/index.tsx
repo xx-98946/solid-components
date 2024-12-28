@@ -13,6 +13,7 @@ import Scroll from "@/comps/Scroll";
 import { createEffect, createSignal, For } from "solid-js";
 import LeftMenu from "./LeftMenu";
 import MarkdownCard from "./MarkdownCard";
+import VBodyCard from "./VBodyCard";
 
 function App() {
   const leftWidth = createLimitedSignal(200, 100, 300);
@@ -53,20 +54,28 @@ function App() {
       id: "SplitterCard",
     },
     {
-      title: "Markdown组件",
+      title: "博客组件",
       id: "MarkdownCard",
+    },
+    {
+      title: "虚拟主体组件",
+      id: "VBody",
     },
   ];
 
   return (
     <main class="flex flex-col h-screen w-screen overflow-hidden">
       <CommonHeader class="grow-0 shrink-0" />
-      <Splitter class="flex flex-1 pt-4">
-        <Splitter.left width={leftWidth} splitterClass="bg-gray-50">
+      <Splitter class="flex flex-1">
+        <Splitter.left
+          width={leftWidth}
+          splitterClass="bg-gray-50"
+          class="bg-gray-50 pt-4"
+        >
           <LeftMenu list={menuList} activeId={getScrollTopElement()?.id} />
         </Splitter.left>
-        <Splitter.center>
-          <Scroll class="h-full" curElement={scrollTopElement}>
+        <Splitter.center class="pt-4">
+          <Scroll class="h-full pb-[80vh]" curElement={scrollTopElement}>
             <CardCard />
             <TitleCard />
             <ButtonCard />
@@ -76,6 +85,7 @@ function App() {
             <LinkCard />
             <SplitterCard />
             <MarkdownCard />
+            <VBodyCard />
           </Scroll>
         </Splitter.center>
       </Splitter>
