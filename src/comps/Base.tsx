@@ -35,10 +35,11 @@ export function toSignal<T>(defaultValue: IStateOrProp<T>): Signal<T> {
 }
 
 export interface IBaseProps {
-  class?: IStateOrProp<string>; // 覆盖样式
+  class?: string; // 覆盖样式
   baseClass?: string; // 基本样式
-  children?: JSX.Element;
-  component?: string | Component;
+  children?: JSX.Element; // 子元素
+  component?: string | Component; // 组件和类型
+  ui?: string;
   [key: string]: unknown;
 }
 export default function Base(props: IBaseProps) {
@@ -48,9 +49,8 @@ export default function Base(props: IBaseProps) {
     "component",
   ]);
 
-  const [getClass] = toSignal(knownProps.class);
   const component = knownProps.component || "div";
-  const computedClass = () => twMerge(props.baseClass, getClass());
+  const computedClass = () => twMerge(props.baseClass, knownProps.class);
   return (
     <Dynamic component={component} class={computedClass()} {...restProps} />
   );

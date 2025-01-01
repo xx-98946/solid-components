@@ -1,6 +1,7 @@
 import Base, { IBaseProps, IStateOrProp, toSignal } from "./Base";
 import { createSignal, JSX, Signal } from "solid-js";
 import VBody from "./VBody.tsx";
+import { twMerge } from "tailwind-merge";
 
 export interface ISplitterProps extends IBaseProps {}
 const baseClass = "flex overflow-hidden";
@@ -125,8 +126,9 @@ function VerticalSplitter(props: IVerticalSplitterProps) {
     <>
       <VBody mouseup={handleMouseup} mousemove={handleMousemove} />
       <Base
-        baseClass="h-full bg-slate-50 dark:bg-gray-800 w-[2px] hover:bg-blue-500 dark:hover:bg-blue-500 cursor-col-resize rounded-md transition"
-        class={props.class}
+        baseClass={twMerge(
+          `h-full bg-slate-50 dark:bg-gray-800 w-[4px] hover:bg-blue-500 dark:hover:bg-blue-500 cursor-col-resize rounded-md transition ${getIsClicking() && "bg-blue-500"}`,
+        )}
         onMouseDown={handleMouseDown}
       ></Base>
     </>
@@ -186,8 +188,9 @@ function HorizontalSplitter(props: IhorizontalSplitterProps) {
     <>
       <VBody mouseup={handleMouseup} mousemove={handleMousemove} />
       <Base
-        baseClass="h-[2px] w-full bg-slate-50 dark:bg-gray-800  hover:bg-gray-500 dark:hover:bg-blue-500 cursor-row-resize"
-        class={props.class}
+        baseClass={twMerge(
+          `h-[4px] w-full bg-slate-50 dark:bg-gray-800  hover:bg-blue-500  cursor-row-resize ${getIsClicking() && "bg-blue-500"}`,
+        )}
         onMouseDown={handleMouseDown}
       ></Base>
     </>

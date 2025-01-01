@@ -1,26 +1,40 @@
-import CommonHeader from "@/pages/common/Header";
-import raw from "./test.md?raw";
-import Markdown from "@/comps/Markdown";
-// import Code from "@/comps/Code";
-import Card from "@/comps/Card";
 import { Button, ButtonStyles } from "@/comps/Button";
-import getTargetPosition from "@/utils/getTargetRect";
-
-function handleClick(e) {
-  const result = getTargetPosition(e.target);
-  console.log(result);
-}
+import CommonHeader from "@/pages/common/Header";
+import { createEffect, createSignal } from "solid-js";
+import { twMerge } from "tailwind-merge";
 
 export default function Test() {
+  const [getChecked, setChecked] = createSignal(false);
+
+  const toggle = () => {
+    setChecked((value) => !value);
+  };
+
+  const data = () => {
+    return getChecked() ? { "data-checked": "" } : {};
+  };
+
+  const computedClass = () => {
+    return twMerge(ButtonStyles.blueFill, getChecked() && "text-red-600");
+  };
+
+  createEffect(() => {
+    console.log("??", computedClass());
+  });
   return (
     <>
       <CommonHeader />
-      <Button class={ButtonStyles.bluePlain} onClick={handleClick}>
-        提示
+
+      <Button
+        class={twMerge(ButtonStyles.blueFill, "data-checked:text-red-600")}
+        onclick={toggle}
+        {...data}
+      >
+        按钮
       </Button>
-      <Card class="mt-4">
-        <Markdown raw={raw} class="w-3/4 mx-auto" />
-      </Card>
+      <Button class={computedClass()} onclick={toggle}>
+        按钮
+      </Button>
     </>
   );
 }
