@@ -1,5 +1,5 @@
 import Card from "@/comps/Card";
-import Title from "@/comps/Title";
+import Leading from "@/comps/Leading";
 import Hr from "@/comps/Hr";
 import Scroll from "@/comps/Scroll";
 import { For } from "solid-js";
@@ -21,10 +21,10 @@ export default function () {
 
   return (
     <Card id="ScrollCard">
-      <Title>滚动条组件 Scroll</Title>
+      <Leading>滚动条组件 Scroll</Leading>
       <Hr></Hr>
       <Card class="mb-0">
-        <Title class="text-xl">水平滚动条</Title>
+        <Leading class="text-xl">水平滚动条</Leading>
         <Hr></Hr>
         <Scroll class="flex gap-8 p-4 pb-6 snap-x snap-mandatory">
           <For each={imgList}>
@@ -38,7 +38,7 @@ export default function () {
         </Scroll>
       </Card>
       <Card>
-        <Title class="text-xl">垂直滚动条</Title>
+        <Leading class="text-xl">垂直滚动条</Leading>
         <Hr></Hr>
         <Scroll class="grid snap-y h-64 grid-cols-5 gap-8 p-4">
           <For each={imgList}>

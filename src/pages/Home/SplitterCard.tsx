@@ -2,7 +2,7 @@ import Card from "@/comps/Card";
 import Center from "@/comps/Center";
 import Hr from "@/comps/Hr";
 import Splitter from "@/comps/Splitter";
-import Title from "@/comps/Title";
+import Leading from "@/comps/Leading";
 import { createLimitedSignal } from "@/utils";
 import { createSignal } from "solid-js";
 
@@ -13,11 +13,11 @@ export default function SplitterCard() {
   const rightWidth = createLimitedSignal(400, 100, 600);
   return (
     <Card id="SplitterCard">
-      <Title>分隔面板组件 - Splitter</Title>
+      <Leading>分隔面板组件 - Splitter</Leading>
       <Hr />
 
       <Card>
-        <Title class="text-xl">水平分隔 左侧</Title>
+        <Leading class="text-xl">水平分隔 左侧</Leading>
         <Hr></Hr>
         <Splitter>
           <Splitter.left class="bg-red-500 dark:bg-red-800 h-20" width={width}>
@@ -30,7 +30,7 @@ export default function SplitterCard() {
       </Card>
 
       <Card>
-        <Title class="text-xl">水平分隔 右侧</Title>
+        <Leading class="text-xl">水平分隔 右侧</Leading>
         <Hr></Hr>
         <Splitter>
           <Splitter.center class="bg-red-500 dark:bg-red-800">
@@ -42,7 +42,7 @@ export default function SplitterCard() {
         </Splitter>
       </Card>
       <Card>
-        <Title class="text-xl">水平分隔 左中右</Title>
+        <Leading class="text-xl">水平分隔 左中右</Leading>
         <Hr></Hr>
         <Splitter>
           <Splitter.left
@@ -64,7 +64,7 @@ export default function SplitterCard() {
       </Card>
 
       <Card>
-        <Title class="text-xl">垂直分隔 上中下</Title>
+        <Leading class="text-xl">垂直分隔 上中下</Leading>
         <Hr></Hr>
         <Splitter class="flex-col h-[30vh]">
           <Splitter.top
@@ -86,7 +86,7 @@ export default function SplitterCard() {
       </Card>
 
       <Card>
-        <Title class="text-xl">混合布局 上中下</Title>
+        <Leading class="text-xl">混合布局 上中下</Leading>
         <Hr></Hr>
         <Splitter class="flex-col h-[30vh]">
           <Splitter.top
@@ -118,7 +118,7 @@ export default function SplitterCard() {
       </Card>
 
       <Card>
-        <Title class="text-xl">混合布局 左中右</Title>
+        <Leading class="text-xl">混合布局 左中右</Leading>
         <Hr></Hr>
         <Splitter class="h-[30vh]">
           <Splitter.left class="bg-red-500 dark:bg-red-800" width={400}>

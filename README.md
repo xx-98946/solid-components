@@ -10,3 +10,10 @@
 
    - 使用twMerge函数中的短路运算符，较通用的方式 ✅
    - 使用data配合选择器样式表示，可以实现，但是代码叫繁琐，要使用data-key=value的形式，仅适合使用web-component的方案
+
+## solidjs 注意事项
+
+1. props是响应式的，而且具有两种形式
+
+- 如果传递的是sigal，那么数据本身的变化可以被追踪，可以解构
+- 如果传递的是普通类型，则需要使用props.key或者splitProps方法来监听

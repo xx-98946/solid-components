@@ -1,13 +1,13 @@
-import { Button, ButtonStyles } from "@/comps/Button";
+import { Button } from "@/comps/Button";
 import Card from "@/comps/Card";
 import Hr from "@/comps/Hr";
 import Icon from "@/comps/Icon";
-import Title from "@/comps/Title";
+import Leading from "@/comps/Leading";
 
 export default function () {
   return (
     <Card id="IconCard">
-      <Title>图标组件 - Icon</Title>
+      <Leading>图标组件 - Icon</Leading>
       <Hr />
 
       <div class="flex items-center gap-4">
@@ -129,7 +129,7 @@ export default function () {
         </Icon>
 
         <a href="https://heroicons.com/outline" target="_blank">
-          <Button class={ButtonStyles.purplePlain}>
+          <Button class={Button.purplePlain}>
             更多
             <Icon class="size-4 ml-1">
               <svg

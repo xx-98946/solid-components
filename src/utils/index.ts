@@ -46,7 +46,7 @@ interface IToastOptions {
 export function toast({ message, position }: IToastOptions) {
   const messageNode = document.createElement("div");
   messageNode.innerHTML = message;
-  messageNode.className = `fixed bg-amber-300 p-2  rounded-md -translate-x-1/2 text-sm`;
+  messageNode.className = `fixed bg-amber-300 p-2  rounded-md -translate-x-1/2 text-sm font-bold`;
   const [x, y] = position;
   messageNode.setAttribute("style", `left:${x}px;top:${y + 10}px;`);
   console.log({ x, y, message });

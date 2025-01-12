@@ -1,22 +1,22 @@
-import { Button, ButtonStyles } from "@/comps/Button";
+import { Button } from "@/comps/Button";
 import Card from "@/comps/Card";
 import Hr from "@/comps/Hr";
-import Title from "@/comps/Title";
+import Leading from "@/comps/Leading";
 
 import { For } from "solid-js";
 
 export default function ButtonCard() {
   const list: Array<{
     label: string;
-    style: keyof typeof ButtonStyles;
-    fillStyle: keyof typeof ButtonStyles;
-    plainStyle: keyof typeof ButtonStyles;
+    style: keyof typeof Button;
+    fillStyle: keyof typeof Button;
+    plainStyle: keyof typeof Button;
   }> = [
     {
       label: "基本",
-      style: "base",
-      fillStyle: "baseFill",
-      plainStyle: "basePlain",
+      style: "gray",
+      fillStyle: "grayFill",
+      plainStyle: "grayPlain",
     },
 
     {
@@ -65,24 +65,24 @@ export default function ButtonCard() {
   ];
   return (
     <Card id="ButtonCard">
-      <Title>按钮组件 - Button</Title>
+      <Leading>按钮组件 - Button</Leading>
       <Hr></Hr>
       <For each={list}>
         {(item) => (
           <div class="px-2 flex items-center">
             <span>{item.label}按钮：</span>
-            <Button class={ButtonStyles[item.style]}>按钮</Button>
-            <Button disabled class={ButtonStyles[item.style]}>
+            <Button class={Button[item.style]}>按钮</Button>
+            <Button disabled class={Button[item.style]}>
               禁用
             </Button>
 
-            <Button class={ButtonStyles[item.fillStyle]}>填充</Button>
-            <Button class={ButtonStyles[item.fillStyle]} disabled>
+            <Button class={Button[item.fillStyle]}>填充</Button>
+            <Button class={Button[item.fillStyle]} disabled>
               填充禁用
             </Button>
 
-            <Button class={ButtonStyles[item.plainStyle]}>朴素</Button>
-            <Button class={ButtonStyles[item.plainStyle]} disabled>
+            <Button class={Button[item.plainStyle]}>朴素</Button>
+            <Button class={Button[item.plainStyle]} disabled>
               朴素禁用
             </Button>
           </div>

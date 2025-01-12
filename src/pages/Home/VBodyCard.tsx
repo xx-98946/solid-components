@@ -1,6 +1,6 @@
 import Card from "@/comps/Card";
 import Hr from "@/comps/Hr";
-import Title from "@/comps/Title";
+import Leading from "@/comps/Leading";
 import VBody from "@/comps/VBody";
 import { createSignal } from "solid-js";
 
@@ -11,7 +11,7 @@ export default function VBodyCard() {
   }
   return (
     <Card id="VBody">
-      <Title>虚拟主体 - VBody</Title>
+      <Leading>虚拟主体 - VBody</Leading>
       <Hr></Hr>
       <div class="pl-2 select-none leading-8">
         <div>

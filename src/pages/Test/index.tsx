@@ -1,6 +1,8 @@
-import { Button, ButtonStyles } from "@/comps/Button";
+import { Button } from "@/comps/Button";
+import Title from "@/comps/Title";
 import CommonHeader from "@/pages/common/Header";
-import { createEffect, createSignal } from "solid-js";
+import { setPathname } from "@/store";
+import { createEffect, createSignal, onMount } from "solid-js";
 import { twMerge } from "tailwind-merge";
 
 export default function Test() {
@@ -15,18 +17,17 @@ export default function Test() {
   };
 
   const computedClass = () => {
-    return twMerge(ButtonStyles.blueFill, getChecked() && "text-red-600");
+    return twMerge(Button.blueFill, getChecked() && "text-red-600");
   };
 
-  createEffect(() => {
-    console.log("??", computedClass());
+  onMount(() => {
+    setPathname("/test");
   });
   return (
     <>
-      <CommonHeader />
-
+      <Title>测试</Title>
       <Button
-        class={twMerge(ButtonStyles.blueFill, "data-checked:text-red-600")}
+        class={twMerge(Button.blueFill, "data-checked:text-red-600")}
         onclick={toggle}
         {...data}
       >
